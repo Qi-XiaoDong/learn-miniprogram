@@ -1,27 +1,22 @@
-// pages/about/about.js
+// pages/swiper/swiper.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    handfuncName: "loginIn",
-    iconSize: [20, 30, 40, 50, 60, 70],
-    iconColor: [
-      'red', 'orange', 'yellow', 'green', 'rgb(0,255,255)', 'blue', 'purple'
-    ],
-    iconType: [
-      'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
-    ]
+
   },
 
   /**
-   * 登录函数
-   * @param {object} event ：事件对象 
+   * 改变当前swiper Cureent
+   * @param {} options 
    */
-  loginIn(event){
-    console.log(event, "点击了登录");
+
+  changeCurrent: function (event) {
+    console.log(event.detail);
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

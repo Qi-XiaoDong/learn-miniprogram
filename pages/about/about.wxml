@@ -1,2 +1,21 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class="container">
+  <view class="icon-box">
+    <icon class="icon-box-img" type="success" size="20"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">成功</view>
+      <view class="icon-box-desc">用于表示操作顺利完成</view>
+    </view>
+  </view>
+</view>
+<!-- text -->
+
+<text space="emsp">I am king of the world</text>
+
+<!-- button -->
+
+<button type="primary" plain loading bindtap="{{handfuncName}}">点击登录</button>
+
+<!-- input -->
+
+<input placeholder="输入密码" maxlength="6" password type="text"></input>

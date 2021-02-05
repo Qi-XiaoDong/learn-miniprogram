@@ -34,3 +34,51 @@
 1. 将新增文件的路径写在page选项的第一个，则会默认展示
 
 2. 添加编译模式
+
+## 生命周期和调试
+
+### 生命周期
+
+- 小程序创建生命周期：[https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html]
+
+- 页面的生命周期：[https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html]
+
+### 调试
+
+- 逻辑代码调试方法
+
+1. console.log()控制台
+
+2. 弹框调试
+
+- 模拟， 真机调试模式
+
+## 基础组件的使用
+
+- 组件地址：[https://developers.weixin.qq.com/miniprogram/dev/component/]
+
+### swiper swiper-item（轮播）
+
+1. swiper-item中的图片不够铺满屏幕时，可以设置样式
+
+2. swiper-item可以做页面的切换
+
+### navigator（跳转）
+
+1.  navigator:只可以跳转到内部地址，
+2. navigator:跳转也和tabar冲突，设置了tabar则跳转失效
+
+## 小程序指南
+
+- 事件：[https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html]
+
+## 小程序框架
+
+## 小程序API
+
+
+
+
+
+
+

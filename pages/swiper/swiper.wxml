@@ -1,0 +1,17 @@
+<!--pages/swiper/swiper.wxml-->
+<view>
+  <swiper indicator-dots autoplay circular current bindchange="changeCurrent">
+    <!-- 第一项内容 -->
+    <swiper-item>
+      <navigator url="/pages/about/about">
+        <image src="https://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/4034970a304e251f027ac8aaa086c9177e3e53d6.jpg"></image>
+      </navigator>
+     </swiper-item>
+    <!-- 第二项内容 -->
+    <swiper-item>
+      <navigator url="/pages/index/index">
+         <image src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/472309f79052982237a5fe77d0ca7bcb0b46d4f4.jpg"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
