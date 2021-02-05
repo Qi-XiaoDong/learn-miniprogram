@@ -64,15 +64,122 @@
 2. swiper-item可以做页面的切换
 
 ### navigator（跳转）
+1. 相关Api ：[https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html]
+2. navigator:只可以跳转到内部地址，
+3. navigator:**跳转也和tabar冲突，设置了tabar则跳转失效**
+4. open-type: 跳转类型
 
-1.  navigator:只可以跳转到内部地址，
-2. navigator:跳转也和tabar冲突，设置了tabar则跳转失效
+```js
+navigate: 保留当前页面跳转有返回箭头
+
+redirect: 在当前页面跳转没有返回箭头
+
+switchTab: 跳转到tabar页面
+
+reLaunch: 不保留其他页面跳转
+
+navigateBack: 提供返回按钮
+
+exit: 退出当前小程序，target="miniProgram"时生效
+```
+
+### audio(音频播放器)
+
+1. 相关Api：[https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.stopVoice.html]
+2. 创建 audio对象 
+```js
+Page({
+  onReady: function (e) {
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wx.createAudioContext('myAudio') // myAudio 为 audio组件的 id值
+  },
+```
+### vedio(视频播放器)
+
+1. 相关Api:[https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html]
+
+### movable-view movable-area（可移动视图容器）
+1. 
+
+### cover-view cover-image 覆盖在原生组件之上的文本和图片。
+1. 
+
+### from表单
+
+1. submit：提交事件
+
+2. reset： 重置事件
+
 
 ## 小程序指南
 
 - 事件：[https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html]
+1. 除 bind 外，也可以用 catch 来绑定事件。与 bind 不同， catch 会阻止事件向上冒泡。
+2. 绑定形式：
+```js
+// wxml
+  <view bindtap="eventFun"></view> // 第一种方式
+  <view bindtap="{{Fun}}"></view> // 第二种方式
+// 第二种优点 操作函数可以切换
+// wxss
+
+page({
+
+  data：{
+    Fun：flag ? eventFun : eventFunc2,
+  }
+  eventFun(event){
+    console.log(event);
+  }
+})
+```
+3. dataset: 在组件节点中可以附加一些自定义数据。这样，在事件中可以获取这些自定义的节点数据，用于事件的逻辑处理。
+
+```js
+  <view data-alpha-beta="1" data-alphaBeta="2" bindtap="bindViewTap"> DataSet Test </view>
+
+  Page({
+    bindViewTap:function(event){
+      event.currentTarget.dataset.alphaBeta === 1 // - 会转为驼峰写法
+      event.currentTarget.dataset.alphabeta === 2 // 大写会转为小写
+  }
+})
+```
 
 ## 小程序框架
+### WXML 语法
+
+- 数据绑定：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/data.html]
+
+- 条件渲染：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/conditional.html]
+
+- 列表渲染：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/list.html]
+
+1. 使用 wx:for-item 可以指定数组当前元素的变量名(默认为index)，
+
+2. 使用 wx:for-index 可以指定数组当前下标的变量名：(默认为item)
+
+3. wx:key：
+-  1. 字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。
+
+-  2. 保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字。
+
+4. block wx:for 块的循环
+```js
+<block wx:for="{{[1, 2, 3]}}">
+  <view> {{index}}: </view>
+  <view> {{item}} </view>
+</block>
+```
+- 模板 ：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/template.html]
+
+1. 定义模板
+
+2. 使用模板
+
+3. 作用域
+
+- 引用：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/import.html]
 
 ## 小程序API
 

@@ -1,21 +1,22 @@
-<!--pages/about/about.wxml-->
-<view class="container">
-  <view class="icon-box">
-    <icon class="icon-box-img" type="success" size="20"></icon>
-    <view class="icon-box-ctn">
-      <view class="icon-box-title">成功</view>
-      <view class="icon-box-desc">用于表示操作顺利完成</view>
+<!-- 条件渲染 -->
+<view wx:if="{{true}}">
+  HELLO 
+</view>
+<view wx:else>
+  xixi
+</view>
+
+<view bindtap="eventFun"></view>
+
+<block wx:if="{{false}}">
+  <view>hah</view>
+  <view>fjlaj</view>
+</block>
+
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
     </view>
   </view>
 </view>
-<!-- text -->
-
-<text space="emsp">I am king of the world</text>
-
-<!-- button -->
-
-<button type="primary" plain loading bindtap="{{handfuncName}}">点击登录</button>
-
-<!-- input -->
-
-<input placeholder="输入密码" maxlength="6" password type="text"></input>
