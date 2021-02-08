@@ -110,6 +110,9 @@ Page({
 
 2. reset： 重置事件
 
+### webView 承载网页内容
+
+1. 地址:[https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html]
 
 ## 小程序指南
 
@@ -181,9 +184,18 @@ page({
 
 - 引用：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/import.html]
 
-## 小程序API
+## 小程序API [https://developers.weixin.qq.com/miniprogram/dev/api/]
 
+- 路由跳转 ：[https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html]
 
+-  文件操作 [https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.saveFileToDisk.html]
+
+1. 文件保存
+
+2. 文档的操作
+
+- 数据缓存：[https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html]
+1. 可以利用数据缓存进行不同页面件的数据交流
 
 
 
