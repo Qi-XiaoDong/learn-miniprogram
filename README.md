@@ -63,7 +63,7 @@
 
 2. swiper-item可以做页面的切换
 
-### navigator（跳转）
+### navigator（跳转）[https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html]
 1. 相关Api ：[https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html]
 2. navigator:只可以跳转到内部地址，
 3. navigator:**跳转也和tabar冲突，设置了tabar则跳转失效**
@@ -150,6 +150,15 @@ page({
 ```
 
 ## 小程序框架
+
+### 带参页面传值
+1.  本地缓存
+> 跳转到新页面的之前将数据存放到缓存， 新页面中从缓存中取值
+2. 导航标记传输
+> url:get请求可以使用 再onload的options中
+3. api跳转 ：[https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html]
+> url:get请求可以使用 再onload的options中
+
 ### WXML 语法
 
 - 数据绑定：[https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/data.html]
@@ -196,6 +205,76 @@ page({
 
 - 数据缓存：[https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html]
 1. 可以利用数据缓存进行不同页面件的数据交流
+
+## 自定义组件 [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/]
+
+1. 创建和引用
+2. 模板和样式：[https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html]
+3. Component 构造器:
+- api: [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html]
+- 参考文档：[https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html]
+4. 组件通信
+- 父组件获得子组件对象
+```js
+  this.selectComponent（"#id"）// 得到组件实例对象
+
+```
+- 事件 triggerEvent
+
+```js
+  <component-tag-name bind:myevent="onMyEvent" /> // 绑定自定义事件
+  this.triggerEvent('myevent', myEventDetail, myEventOption) // 触发自定义事件
+  myEventDetail：传递的参数
+  myEventOption： 如何处理事件冒泡
+```
+
+- 数据绑定
+
+```js
+  <component-tag-name prop-a="{{title}}" /> // 传递数据
+  Prop：{
+    PropA： string // 定义时候是小驼峰
+  }
+```
+5. behaviors [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/behaviors.html]
+
+```js
+// 创建Behaviors
+modle.exprts = Behaviors({
+
+})
+
+```
+6. 组件生命周期 [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html]
+
+7. 数据监听器 [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html]
+```js
+observers 
+```
+8. 抽象节点() [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/generics.html]
+
+```js 
+1. json文件中申明抽象节点： {
+  "componentGenerics": {
+    "selectable": true
+  }
+}
+<view wx:for="{{labels}}">
+  <label>
+    <selectable disabled="{{false}}"></selectable> // 一个抽象节点占位，再使用时传递对于的真实节点
+    {{item}}
+  </label>
+</view>
+2. 使用抽象节点：<selectable-group generic:selectable="custom-radio" />
+
+3. 可以有默认的抽象节点
+
+```
+
+9. 组件间的关系 : relations [https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/relations.html]
+
+10. 自定义组件的扩展：[https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/extend.html]
+
 
 
 

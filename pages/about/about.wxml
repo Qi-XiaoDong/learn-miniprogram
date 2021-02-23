@@ -20,3 +20,7 @@
     </view>
   </view>
 </view>
+
+<view bindtap="upload">
+ 点击上传文件
+</view>

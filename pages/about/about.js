@@ -14,6 +14,31 @@ Page({
       'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
     ]
   },
+  /**
+   * 
+   */
+  upload(){
+    wx.chooseImage({
+      success (res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success (res){
+            const data = res.data
+            //do something
+          },
+          fail() {
+            console.log("132133");
+          }
+        })
+      }
+    })
+  },
 
   /**
    * 登录函数
